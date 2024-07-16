@@ -3,6 +3,10 @@ class Merchant
 
   def initialize(merchant)
     @id = merchant
+    data
+  end
+
+  def data
     response = JSON.parse(Net::HTTP.get(uri))
     @iban = response['iban']
     @discount = response['discount']
@@ -12,6 +16,14 @@ class Merchant
     @transactions.each do |transaction|
       @amount_sum += transaction['amount']
       @fee_sum += transaction['fee']
+    end
+  end
+
+  def payable
+    if @discount['minimum_transaction_count'] >= @transactions.count do
+      return @amount_sum - (@fee_sum * (@discount['fees_discount'] / 100))
+    end
+      @amount_sum - @fee_sum
     end
   end
 
