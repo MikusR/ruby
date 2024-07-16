@@ -1,9 +1,11 @@
 class Merchant
+  attr_accessor :name
+
   def initialize(merchant)
-    @merchant.name = merchant
+    @name = merchant
   end
 
   def uri
-    "https://simpledebit.gocardless.io/merchants/#{@merchant}"
+    "https://simpledebit.gocardless.io/merchants/#{@name}"
   end
 end
