@@ -1,18 +1,19 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "dotenv"
-gem "sinatra"
-gem "thin"
+gem 'dotenv'
+gem 'sinatra'
+gem 'thin'
 
 group :test do
-  gem "rack-test"
-  gem "rest-client"
-  gem "rspec"
-  gem "rspec_junit_formatter"
-  gem "rspec-retry"
-  gem "rubysl-securerandom"
+  gem 'rack-test'
+  gem 'rest-client'
+  gem 'rspec'
+  gem 'rspec_junit_formatter'
+  gem 'rspec-retry'
+  gem 'rubysl-securerandom'
 end
 
 group :development do
-  gem "rerun"
+  gem 'rerun'
 end
+gem 'rubocop', '~> 1.65'
