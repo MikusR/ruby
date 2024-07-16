@@ -10,8 +10,8 @@ class Merchant
     @amount_sum = 0
     @fee_sum = 0
     @transactions.each do |transaction|
-      amount_sum += transaction['amount']
-      fee_sum += transaction['fee']
+      @amount_sum += transaction['amount']
+      @fee_sum += transaction['fee']
     end
   end
 
