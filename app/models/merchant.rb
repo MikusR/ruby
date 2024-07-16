@@ -1,9 +1,9 @@
 class Merchant
   def initialize(merchant)
-    @merchant = merchant
+    @merchant.name = merchant
   end
 
   def uri
-    URI("https://simpledebit.gocardless.io/merchants/#{@merchant}")
+    "https://simpledebit.gocardless.io/merchants/#{@merchant}"
   end
 end
