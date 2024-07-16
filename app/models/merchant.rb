@@ -7,14 +7,13 @@ class Merchant
     @iban = response['iban']
     @discount = response['discount']
     @transactions = response['transactions']
+    
     @transactions.each do ||
-      
+
     end
   end
 
-  def sum_of_transactions
 
-  end
 
   def uri
     URI("https://simpledebit.gocardless.io/merchants/#{@id}")
