@@ -14,7 +14,7 @@ class ApiTest
 
   def write_csv
     # iban,amount_in_pence
-    
+
     # to = merchants
     # pp to[0].payable
   end
