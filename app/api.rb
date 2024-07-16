@@ -7,10 +7,16 @@ class ApiTest
   def merchants
     uri = URI('https://simpledebit.gocardless.io/merchants')
     response = JSON.parse(Net::HTTP.get(uri))
-    merchants = response.map { |merchant| Merchant.new(merchant) }
-    pp merchants[0].uri
-    # test.each { |element| pp element }
+    response.map { |merchant| Merchant.new(merchant) }
+  end
+
+  def transactions(merchant)
+    uri = merchant.uri
+    response = JSON.parse(Net::HTTP.get(uri))
+    pp response
   end
 end
 
-ApiTest.new.merchants
+app = ApiTest.new
+merchants = app.merchants
+pp app.transactions(merchants[0])

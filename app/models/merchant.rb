@@ -6,6 +6,6 @@ class Merchant
   end
 
   def uri
-    "https://simpledebit.gocardless.io/merchants/#{@name}"
+    URI("https://simpledebit.gocardless.io/merchants/#{@name}")
   end
 end
