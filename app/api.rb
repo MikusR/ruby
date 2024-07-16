@@ -2,6 +2,7 @@ require 'uri'
 require 'net/http'
 require 'json'
 require './models/merchant'
+require 'csv'
 
 class ApiTest
   def merchants
@@ -12,8 +13,10 @@ class ApiTest
   end
 
   def write_csv
-    to = merchants
-    pp to[0].payable
+    # iban,amount_in_pence
+    
+    # to = merchants
+    # pp to[0].payable
   end
 end
 
