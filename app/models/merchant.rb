@@ -20,11 +20,11 @@ class Merchant
   end
 
   def payable
-    if @discount['minimum_transaction_count'] >= @transactions.count do
-      return @amount_sum - (@fee_sum * (@discount['fees_discount'] / 100))
+    if @discount['minimum_transaction_count'] >= @transactions.count
+      @amount_sum - (@fee_sum * (@discount['fees_discount'] / 100))
     end
-      @amount_sum - @fee_sum
-    end
+
+    @amount_sum - @fee_sum
   end
 
   def uri
