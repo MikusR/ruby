@@ -11,9 +11,7 @@ class ApiTest
     # response.map { |merchant| Merchant.new(merchant) }
   end
 
-  def transactions(merchant)
-    uri = merchant.uri
-    JSON.parse(Net::HTTP.get(uri))
+  def write_csv
   end
 end
 
