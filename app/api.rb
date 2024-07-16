@@ -12,11 +12,11 @@ class ApiTest
 
   def transactions(merchant)
     uri = merchant.uri
-    response = JSON.parse(Net::HTTP.get(uri))
-    pp response
+    JSON.parse(Net::HTTP.get(uri))
   end
 end
 
 app = ApiTest.new
 merchants = app.merchants
+# pp merchants[0].uri
 pp app.transactions(merchants[0])
